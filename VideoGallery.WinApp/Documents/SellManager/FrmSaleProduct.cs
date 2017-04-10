@@ -22,7 +22,7 @@ namespace VideoGallery.WinApp.Documents.SellManager
         }
         int totalInvoiceItem = 0;
         double totalInvoicePrice = 0.00;
-        int InvoiceId = 101;
+        
         List<SaleItem> saleItemList = new List<SaleItem>();
 
         public FrmSaleProduct()
@@ -34,7 +34,8 @@ namespace VideoGallery.WinApp.Documents.SellManager
         {
             lblUserName.Text = _App.UserFullName;
             lblUserID.Text = _App.UserName;
-            lblInvoice.Text = InvoiceId.ToString();
+            lblInvoice.Text = (_App.VgmsDb.Invoice.Max(x => x.Id)+1).ToString();
+   
             gvProduct.DataSource = saleItemList;
 
             ddlProductSearch.DataSource = _App.VgmsDb.Product.ToList();
@@ -107,7 +108,7 @@ namespace VideoGallery.WinApp.Documents.SellManager
         }
         void UpdateTotal()
         {
-            totalInvoiceItem = 1;
+            totalInvoiceItem = 0;
             totalInvoicePrice = 0.00;
             if (saleItemList.Count > 0)
             {
@@ -172,6 +173,7 @@ namespace VideoGallery.WinApp.Documents.SellManager
             gvProduct.DataSource = null;
             gvProduct.DataSource = saleItemList;
             ddlProductSearch.SelectedIndex = -1;
+            lblInvoice.Text = (_App.VgmsDb.Invoice.Max(x => x.Id) + 1).ToString();
             UpdateTotal();
 
         }
