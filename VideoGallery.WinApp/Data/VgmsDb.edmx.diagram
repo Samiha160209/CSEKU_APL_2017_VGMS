@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f5483164f795468db407c347c0cdd758" Name="Diagram1">
+        <EntityTypeShape EntityType="VgmsDbModel.Customer" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="VgmsDbModel.Invoice" Width="1.5" PointX="0.75" PointY="11.125" />
+        <EntityTypeShape EntityType="VgmsDbModel.Product" Width="1.5" PointX="0.75" PointY="4.375" />
+        <EntityTypeShape EntityType="VgmsDbModel.Rented" Width="1.5" PointX="6" PointY="5" />
+        <EntityTypeShape EntityType="VgmsDbModel.Sold" Width="1.5" PointX="3" PointY="5" />
+        <EntityTypeShape EntityType="VgmsDbModel.UserInfo" Width="1.5" PointX="2.75" PointY="8.75" />
+        <AssociationConnector Association="VgmsDbModel.FK_Rented_Customer" />
+        <AssociationConnector Association="VgmsDbModel.FK_Sold_Invoice" />
+        <AssociationConnector Association="VgmsDbModel.FK_Rented_Product" />
+        <AssociationConnector Association="VgmsDbModel.FK_Sold_Product" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

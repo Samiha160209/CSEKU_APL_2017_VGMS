@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{734C78B3-FF6C-445D-ADA6-B1004F6A3D9C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VideoGallery.WinApp</RootNamespace>
+    <AssemblyName>VideoGallery.WinApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>MyApp.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2015.2.623.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.GridView, Version=2015.2.623.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.RichTextEditor, Version=2015.2.623.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2010Blue, Version=2015.2.623.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.UI, Version=2015.2.623.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="TelerikCommon, Version=2015.2.623.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\Customer.cs">
+      <DependentUpon>VgmsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Invoice.cs">
+      <DependentUpon>VgmsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Partials\Product.cs" />
+    <Compile Include="Data\Product.cs">
+      <DependentUpon>VgmsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Rented.cs">
+      <DependentUpon>VgmsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Sold.cs">
+      <DependentUpon>VgmsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\UserInfo.cs">
+      <DependentUpon>VgmsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\VgmsDb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VgmsDb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\VgmsDb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VgmsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\VgmsDb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VgmsDb.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\CustomerManager\FrmAddEditCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\CustomerManager\FrmAddEditCustomer.Designer.cs">
+      <DependentUpon>FrmAddEditCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\CustomerManager\FrmCustomerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\CustomerManager\FrmCustomerList.Designer.cs">
+      <DependentUpon>FrmCustomerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\ProductManager\FrmAddEditProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\ProductManager\FrmAddEditProduct.Designer.cs">
+      <DependentUpon>FrmAddEditProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\ProductManager\FrmProductList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\ProductManager\FrmProductList.Designer.cs">
+      <DependentUpon>FrmProductList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\ReportManager\FrmMonthlyIncomeReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\ReportManager\FrmMonthlyIncomeReport.Designer.cs">
+      <DependentUpon>FrmMonthlyIncomeReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\SellManager\FrmSaleProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\SellManager\FrmSaleProduct.Designer.cs">
+      <DependentUpon>FrmSaleProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\SettingManager\FrmAddEditArtist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\SettingManager\FrmAddEditArtist.Designer.cs">
+      <DependentUpon>FrmAddEditArtist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\SettingManager\FrmArtistList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\SettingManager\FrmArtistList.Designer.cs">
+      <DependentUpon>FrmArtistList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\UserManager\FrmAddEditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\UserManager\FrmAddEditUser.Designer.cs">
+      <DependentUpon>FrmAddEditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\UserManager\FrmUserList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\UserManager\FrmUserList.Designer.cs">
+      <DependentUpon>FrmUserList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\SaleItem.cs" />
+    <Compile Include="_App.cs" />
+    <EmbeddedResource Include="Documents\CustomerManager\FrmAddEditCustomer.resx">
+      <DependentUpon>FrmAddEditCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\CustomerManager\FrmCustomerList.resx">
+      <DependentUpon>FrmCustomerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\ProductManager\FrmAddEditProduct.resx">
+      <DependentUpon>FrmAddEditProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\ProductManager\FrmProductList.resx">
+      <DependentUpon>FrmProductList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\ReportManager\FrmMonthlyIncomeReport.resx">
+      <DependentUpon>FrmMonthlyIncomeReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\SellManager\FrmSaleProduct.resx">
+      <DependentUpon>FrmSaleProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\UserManager\FrmAddEditUser.resx">
+      <DependentUpon>FrmAddEditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\UserManager\FrmUserList.resx">
+      <DependentUpon>FrmUserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="Data\VgmsDb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>VgmsDb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Data\VgmsDb.edmx.diagram">
+      <DependentUpon>VgmsDb.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\VgmsDb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VgmsDb.edmx</DependentUpon>
+      <LastGenOutput>VgmsDb.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\VgmsDb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VgmsDb.edmx</DependentUpon>
+      <LastGenOutput>VgmsDb.cs</LastGenOutput>
+    </Content>
+    <Content Include="MyApp.ico" />
+    <None Include="Resources\Sale_64X64.png" />
+    <None Include="Resources\Report2_24X24.png" />
+    <None Include="Resources\MonthlyIncome24X24.png" />
+    <None Include="Resources\AllBG71.jpg" />
+    <None Include="Resources\AllBg8.jpg" />
+    <None Include="Resources\AllBG7.jpg" />
+    <None Include="Resources\AllBG6.jpg" />
+    <None Include="Resources\AllBg4.jpg" />
+    <None Include="Resources\AllBG3.jpg" />
+    <None Include="Resources\AllBG2.jpg" />
+    <None Include="Resources\AllBG.jpg" />
+    <None Include="Resources\Pay.png" />
+    <None Include="Resources\SaleBG4.jpg" />
+    <None Include="Resources\SaleBG3.jpg" />
+    <None Include="Resources\SaleBG1.jpg" />
+    <None Include="Resources\SaleBG.jpg" />
+    <None Include="Resources\black_red_and_yellow_pattern_background-1467728502.jpg" />
+    <None Include="Resources\logInBG.jpg" />
+    <None Include="Resources\DashBoardBG.jpg" />
+    <None Include="Resources\BlankImage.png" />
+    <None Include="Resources\loginForm.png" />
+    <None Include="Resources\loginIco32x32.png" />
+    <None Include="Resources\Login-FormTmp.png" />
+    <None Include="Resources\bgf.png" />
+    <None Include="Resources\bg.jpg" />
+    <None Include="Resources\240_F_73578243_7wuzi9Rkl81qr9EfmhhaXk3TH8pi2soz.jpg" />
+    <None Include="Resources\CustomerMain_64x64.png" />
+    <None Include="Resources\VideoMain_64x64.png" />
+    <None Include="Resources\UserSearch_24x241.png" />
+    <None Include="Resources\UserMain_64x64.png" />
+    <None Include="Resources\UserSearch_24x24.png" />
+    <None Include="Resources\UserList_24x24.png" />
+    <None Include="Resources\UserAdd_24x24.png" />
+    <None Include="Resources\User_24x24.png" />
+    <None Include="Resources\Report_24x24.png" />
+    <None Include="Resources\File_24x24.png" />
+    <None Include="Resources\Exit_24x24.png" />
+    <None Include="Resources\CustomerList_24x24.png" />
+    <None Include="Resources\CustomerAdd_24x24.png" />
+    <None Include="Resources\Customer_24x24.png" />
+    <None Include="Resources\CDAdd_24x24.png" />
+    <None Include="Resources\Cd_DVDList_24x24.png" />
+    <None Include="Resources\CD_DVD_24x24.png" />
+    <None Include="Resources\thumb-1920-433474.jpg" />
+    <None Include="Resources\1490132081_humans.png" />
+    <None Include="Resources\1490132031_add_user.png" />
+    <None Include="Resources\1490131906_Add-Male-User.png" />
+    <None Include="Resources\1490131853_videocameraclassic.png" />
+    <None Include="Resources\33cc52695e7d623bf1f6ca5c6c2e3f90.jpg" />
+    <None Include="Resources\1.jpg" />
+    <None Include="Resources\music-notes-grunge-background-8493954.jpg" />
+    <None Include="Resources\gk1MNeu.jpg" />
+    <None Include="Resources\Reports_16x16.png" />
+    <None Include="Resources\UserSearch_16x16.png" />
+    <None Include="Resources\UserAdd_16x16.png" />
+    <None Include="Resources\User_16x16.png" />
+    <None Include="Resources\CustomerList_16x16.png" />
+    <None Include="Resources\CustomerAdd_16x16.png" />
+    <None Include="Resources\Customer_16x16.png" />
+    <None Include="Resources\search20x20.png" />
+    <None Include="Resources\cd_16x16.png" />
+    <None Include="Resources\Refresh.png" />
+    <None Include="Resources\Ok-icon.png" />
+    <None Include="Resources\note-list16x16.png" />
+    <None Include="Resources\file16x16.png" />
+    <None Include="Resources\edit16x16.png" />
+    <None Include="Resources\Add.png" />
+    <None Include="Resources\floppy_128x128.png" />
+    <None Include="Resources\floppy_16x16.png" />
+    <None Include="Resources\floppy_32x32.png" />
+    <None Include="Resources\wood-texture-22848-1920x1080.jpg" />
+    <None Include="Resources\0e26dcc35b51f555574f644d3acb6f89.jpg" />
+    <None Include="Resources\IMG_11193392.png" />
+    <None Include="Resources\IMG_11193391.png" />
+    <None Include="Resources\6898889-stunning-night-wallpaper.jpg" />
+    <None Include="Resources\IMG_1119339.png" />
+    <None Include="Resources\schedule.jpg" />
+    <None Include="Resources\video-gallery-bg.jpg" />
+    <None Include="Resources\video-gallery.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
